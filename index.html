@@ -1,0 +1,62 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>jQuery</title>
+    <link rel="stylesheet" href="https://code.jquery.com/ui/1.13.0/themes/base/jquery-ui.css">
+    <script src="https://code.jquery.com/jquery-3.6.0.js"></script>
+    <script src="https://code.jquery.com/ui/1.13.0/jquery-ui.js"></script>
+    <script defer src="./api.js"></script>
+    <script defer src="./modal.js"></script>
+    <script defer src="./app.js"></script>
+</head>
+<body>
+
+<div class="header-buttons">
+    <button id="addBtn">addBtn</button>
+</div>
+
+<table class="u-full-width">
+    <thead>
+    <tr>
+        <th>Title</th>
+        <th>Body</th>
+        <th>Actions</th>
+    </tr>
+    </thead>
+
+    <tbody id="postListContainer"></tbody>
+</table>
+
+
+<script type="text/template" id="postItemTemplate">
+    <tr class="post-item" data-id="{{id}}">
+        <td>{{title}}</td>
+        <td>{{body}}</td>
+        <td>
+            <button class="edit-btn">edit</button>
+            <button class="delete-btn">X</button>
+        </td>
+    </tr>
+</script>
+
+<div id="postModal" title="Post" class="hide">
+    <form>
+        <fieldset>
+            <input name="id" type="hidden">
+
+            <div>
+                <label for="title">Title:</label>
+                <input name="title" type="text" id="title" required>
+            </div>
+
+            <div>
+                <label for="body">Body:</label>
+                <input name="body" type="text" id="body" required>
+            </div>
+        </fieldset>
+    </form>
+</div>
+</body>
+</html>
